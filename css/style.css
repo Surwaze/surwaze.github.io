@@ -656,3 +656,10 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+#surwaze_features{
+  font-family: 'Open Sans';
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
