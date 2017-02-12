@@ -663,3 +663,35 @@ form label {
   justify-content: center;
   align-items: center;
 }
+
+
+.p1, .p2, .p3{
+  width: 500px;
+  height: 500px;
+  background-size: 500px 500px;
+  margin: 10px;
+
+}
+.p1 {
+  background-image: url('../images/p1.jpg');
+}
+
+.p2{
+  background-image: url('../images/p2.jpg');
+
+}
+
+.p3{
+  background-image: url('../images/p3.jpg');
+
+}
+
+.p1 p, .p2 p, .p3 p{
+background-color: black;
+color: white;
+font-size: 2em;
+padding-left: 10px;
+padding-right: 10px;
+text-align: center;
+/*width: 500px;*/
+}
