@@ -696,7 +696,7 @@ text-align: center;
 /*width: 500px;*/
 }
 #email{
-  padding: 0px;
+  /*padding: 0px;*/
   padding-left: 20px;
   padding-right: 100px;
   border-color: #f94659;
