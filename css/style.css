@@ -695,3 +695,16 @@ padding-right: 10px;
 text-align: center;
 /*width: 500px;*/
 }
+#email{
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 100px;
+  border-color: #f94659;
+  border-radius: 100px;
+  color: #fff;
+}
+#button_submit{
+  padding: 0px;
+  margin: 0px;
+  margin-left: -90px;
+}
