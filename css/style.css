@@ -696,7 +696,7 @@ text-align: center;
 /*width: 500px;*/
 }
 #email{
-  /*padding: 0px;*/
+ padding: 10px;
   padding-left: 20px;
   padding-right: 100px;
   border-color: #f94659;
@@ -705,6 +705,6 @@ text-align: center;
 }
 #button_submit{
   padding: 0px;
-  margin: 0px;
+  margin: 2px;
   margin-left: -86px;
 }
