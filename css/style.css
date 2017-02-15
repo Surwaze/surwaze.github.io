@@ -702,9 +702,10 @@ text-align: center;
   border-color: #f94659;
   border-radius: 100px;
   color: #fff;
+  height:60px;
 }
 #button_submit{
   padding: 0px;
-  margin: 2px;
-  margin-left: -86px;
+  margin: 0px;
+  margin-left: -90px;
 }
