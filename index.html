@@ -1,95 +1,188 @@
 <!DOCTYPE html>
-<html ng-app="surwaze" ng-cloak>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
 <head>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/angular.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Import Reference Sample -->
-    <!-- <link rel="import" href="../bower_components/paper-slider/paper-slider.html"> -->
-    <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <title>Surwaze Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Surwaze</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDaLWLjIYAnX3kGjuw8p688BCqGyCRv9dM",
+        authDomain: "surwaze.firebaseapp.com",
+        databaseURL: "https://surwaze.firebaseio.com",
+        storageBucket: "surwaze.appspot.com",
+        messagingSenderId: "479446615887"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <div class="container-fluid wrapper">
-        <div class="userpanel">
-        </div>
-        <div class="navigation">
-            <div class="logoslot">
-                <img src="./assets/logo.png" id="logoimg">
+    <div class="fh5co-loader"></div>
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div id="fh5co-logo"><a href="index.html">SURWAZE<strong>.</strong></a></div>
+                    </div>
+                </div>
             </div>
-            <div class="navigation-home navigation-item selected" onclick="SelectNav('home')">
-                <h4>Home</h4>
-            </div>
-            <div class="navigation-inbox navigation-item" onclick="SelectNav('inbox')">
-                <h4>Inbox</h4>
-            </div>
-            <div class="navigation-analytics navigation-item" onclick="SelectNav('analytics')">
-                <h4>Analytics</h4>
-            </div>
-            <div class="navigation-settings navigation-item" onclick="SelectNav('settings')">
-                <h4>Settings</h4>
-            </div>
-        </div>
-        <div class="survey-wrap" ng-controller="ctrl1">
-            <div id="addQuestion" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">New Question</h4>
-                        </div>
-                        <div class="modal-body">
-                            <input type="text" ng-model=newQuestion class="newForm option_0" name="question-input" placeholder="Enter New Question." onfocus="addBorder('option_0')" />
-                            <input type="text" ng-model=newOptions[0].option class="newForm option_1" name="option_one" placeholder="Option 1" onfocus="addBorder('option_1')" />
-                            <input type="text" ng-model=newOptions[1].option class="newForm option_2" name="option_two" placeholder="Option 2." onfocus="addBorder('option_2')" />
-                            <input type="text" ng-model=newOptions[2].option class="newForm option_3" name="option_three" placeholder="Option 3." onfocus="addBorder('option_3')" />
-                            <input type="text" ng-model=newOptions[3].option class="newForm option_4" name="option_four" placeholder="Option 4." onfocus="addBorder('option_4')" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="insertData()">Add Quesion</button>
+        </nav>
+        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h1>We Are Coming Very Soon!</h1>
+                                <div class="row">
+                                    <h2>Notify me when it's ready</h2>
+                                    <form class="form-inline" id="form">
+                                        <div class="col-md-12 col-md-offset-0">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="email" placeholder="Get notify by email">
+                                                <button type="submit" class="btn btn-primary" id="button_submit">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                         <ul class="fh5co-social-icons" style="margin-top:15%; margin-left: -5%;">
+                                            <li><a href="https://twitter.com/surwaze"><i class="icon-twitter-with-circle"></i></a></li>
+                                            <li><a href="https://www.facebook.com/Surwaze"><i class="icon-facebook-with-circle"></i></a></li>
+
+                                            <li><a href="#"><i class="icon-mail"></i></a></li>
+                                            <!-- <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li> -->
+
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="question-cards-wrap container-fluid">
-                <a href="#"><div class="new-button" data-toggle="modal" data-target="#addQuestion">
-                    <h3>+</h3>
-                </div></a>
-                <div class="row question-card" ng-repeat="q in questions">
-                    <div class=col-md-12>
-                        <div class="question>">
-                            <p>{{q.question}}</p>
+        </header>
+        <div class="container-fluid" style="background-color:#F94659;">
+            <div class="row">
+                <div class="col-md-12" id="surwaze_features">
+                    <h2>Features</h2>
+                    <div class="row">
+                        <div class="col-lg-3 container p1">
+                        <p> Monetize your app </p>
                         </div>
-                        <hr>
-                        <div class="options">
-                            <p>{{q.options[0].sl}}:{{q.options[0].option}}</p>
-                            <p>{{q.options[1].sl}}:{{q.options[1].option}}</p>
-                            <p>{{q.options[2].sl}}:{{q.options[2].option}}</p>
-                            <p>{{q.options[3].sl}}:{{q.options[3].option}}</p>
+                        <div class="col-lg-3 container p2">
+                        <p> Survey right into mobile </p>
+                        </div>
+                        <div class="col-lg-3 container p3">
+                        <p> A new brand of Survey </p>
                         </div>
                     </div>
+                    <br>
+<!--
+                    <ul >
+                        <li>A new brand of Survey</li>
+                        <li>Survey right into mobile</li>
+                        <li>Monetize your app</li>
+                    </ul>
+-->
                 </div>
-                <!-- <div class="row question-card">
-                    <div class="question>">
-                        <p> What The Fuuuuuuuuuck?????</p>
-                    </div>
-                    <hr>
-                    <div class="options">
-                        <p>a:don't give a fuck</p>
-                        <p>b:still don't give a fuck</p>
-                        <p>c:still don't give a fuck</p>
-                        <p>d:still don't give a fuck</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; 2017 LmntrX Tech.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Stellar -->
+    <script src="js/jquery.stellar.min.js"></script>
+    <!-- Main -->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+    var db;
+    $(function() {
+        db = firebase.database();
+    });
+    $("#form").submit(function(e) {
+        e.preventDefault();
+        getFormData();
+    });
+
+    function getFormData() {
+        var email = document.getElementById('email').value;
+        console.log(email);
+        var newPostRef = db.ref('emails').push()
+            //var newPostRef = postListRef.push();
+        newPostRef.set({
+            email: email
+        });
+        document.getElementById("form").classList.add("hide");
+        document.getElementById("meanwhile").classList.add("hide");
+        document.getElementById("thankyou").classList.remove("hide");
+    }
+    </script>
 </body>
 
 </html>
